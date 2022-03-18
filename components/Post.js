@@ -77,7 +77,7 @@ function Post({ id, post, postPage }) {
 
   return (
     <div
-      className="p-3 flex cursor-pointer border-b border-gray-700"
+      className="p-3 flex cursor-pointer border-b border-white-700"
       onClick={() => router.push(`/${id}`)}
     >
       {!postPage && (
@@ -99,7 +99,7 @@ function Post({ id, post, postPage }) {
           <div className="text-[#6e767d]">
             <div className="inline-block group">
               <h4
-                className={`font-bold text-[15px] sm:text-base text-[#d9d9d9] group-hover:underline ${
+                className={`font-bold text-[15px] sm:text-base text-black group-hover:underline ${
                   !postPage && "inline-block"
                 }`}
               >
@@ -116,7 +116,7 @@ function Post({ id, post, postPage }) {
               <Moment fromNow>{post?.timestamp?.toDate()}</Moment>
             </span>
             {!postPage && (
-              <p className="text-[#d9d9d9] text-[15px] sm:text-base mt-0.5">
+              <p className="text-black w-[300px] text-[15px]  sm:text-base overflow-hidden z-[-7] mt-0.5 mr-3">
                 {post?.text}
               </p>
             )}
@@ -126,7 +126,9 @@ function Post({ id, post, postPage }) {
           </div>
         </div>
         {postPage && (
-          <p className="text-[#d9d9d9] mt-0.5 text-xl">{post?.text}</p>
+          <p className="text-[#00000] overflow-hidden mt-0.5 text-xl">
+            {post?.text}
+          </p>
         )}
         <img
           src={post?.image}

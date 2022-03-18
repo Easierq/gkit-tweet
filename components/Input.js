@@ -80,7 +80,7 @@ function Input() {
 
   return (
     <div
-      className={`border-b border-gray-700 p-3 flex space-x-3 overflow-y-scroll scrollbar-hide ${
+      className={`border-b border-white-700 p-3 flex space-x-3 overflow-y-scroll scrollbar-hide ${
         loading && "opacity-60"
       }`}
     >
@@ -88,16 +88,15 @@ function Input() {
         src={session.user.image}
         alt=""
         className="h-11 w-11 rounded-full cursor-pointer"
-        onClick={signOut}
       />
-      <div className="divide-y divide-gray-700 w-full">
+      <div className="divide-y divide-white-700 w-full">
         <div className={`${selectedFile && "pb-7"} ${input && "space-y-2.5"}`}>
           <textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="What's happening?"
             rows="2"
-            className="bg-transparent outline-none text-[#d9d9d9] text-lg placeholder-gray-500 tracking-wide w-full min-h-[50px]"
+            className="bg-transparent outline-none text-[#000] text-lg placeholder-gray-500 overflow-hidden tracking-wide w-full min-h-[50px]"
           />
 
           {selectedFile && (
@@ -132,9 +131,9 @@ function Input() {
                 />
               </div>
 
-              <div className="icon rotate-90">
+              {/* <div className="icon rotate-90">
                 <ChartBarIcon className="text-[#1d9bf0] h-[22px]" />
-              </div>
+              </div> */}
 
               <div className="icon" onClick={() => setShowEmojis(!showEmojis)}>
                 <EmojiHappyIcon className="text-[#1d9bf0] h-[22px]" />
